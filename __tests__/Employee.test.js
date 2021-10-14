@@ -9,16 +9,14 @@ test('creates an Employee super class', () => {
 });
 
 
-
-
 // test('imports employee info from input', () => {
 //     const employee = new Employee();
 
-//     expect(employee.name).toBe(String);
+//     expect(employee.name).toEqual(expect.any(String));
 //     expect(employee.id).toEqual(expect.any(Number));
-//     expect(employee.email).toBe(String);
+//     expect(employee.email).toEqual(expect.any(String));
 
-// });
+//  });
 
 // getName()
 
