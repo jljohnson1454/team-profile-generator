@@ -20,8 +20,6 @@ test('creates an Employee super class', () => {
 
 // getName()
 
-//getName('')
-
 // getId()
 
 // getEmail()
