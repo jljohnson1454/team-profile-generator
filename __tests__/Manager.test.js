@@ -9,6 +9,6 @@ test('this is the intern class', () => {
     expect(manager.officeNumber).toBe(95);
     expect(manager.role).toBe('Manager');
 
-})
+});
 
 
