@@ -8,7 +8,7 @@ test('input a name', () => {
 test('get Name Method', () => {
     const employee = new Employee('Jacob');
     expect(employee.getName()).toBe('Jacob');
-})
+});
 
 test('input a id', () => {
     const employee = new Employee('Jacob', 136114, 'jljohnson1454@gmail.com');
