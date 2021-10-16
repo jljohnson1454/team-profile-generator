@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const inquirer = require('inquirer');
 
 const htmlHelper = require('./src/htmlHelper');
@@ -82,7 +83,7 @@ const addEmployee = () => {
     inquirer
     .prompt([
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'role',
             message: "Choose the role of the next employee",
             choices: [ 'Engineer', 'Intern', 'None']
@@ -90,9 +91,9 @@ const addEmployee = () => {
             if(employeeData.role === 'Engineer'){
                 promptEngineer();
             } else if(employeeData.role === 'Intern') {
-                     promptIntern();
+                promptIntern();
             } else if(employeeData.role === 'None') {
-                     writeToFile();
+                writeToFile();
                 //Will need to pass in the team members array here
             }
         })
@@ -158,7 +159,8 @@ const promptEngineer = () => {
             engineerData.name,
             engineerData.id,
             engineerData.email,
-            engineerData.git)
+            engineerData.git,
+            engineerData.role)
             
             teamArray.push(engineer)
             
@@ -237,7 +239,9 @@ const promptIntern = () => {
 
 // TODO: Create a function to write HTML file
 function writeToFile() {
-    return fs.writeFileSync()
+    var htmlPath = path.join(__dirname, '/dist', 'index.html');
+
+    fs.writeFileSync(htmlPath, htmlHelper(teamArray), 'utf-8')
 
 }
 
