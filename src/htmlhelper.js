@@ -1,7 +1,7 @@
 // Multiple functions for exporting
 const generateTeam = (team) => {
     return`
-    <div>Eventually this will have functionality</div>`;
+    <div class="col-4 mt-4">Blah Blah Blah</div>`;
 };
 
 
@@ -21,7 +21,7 @@ module.exports = team => {
         <title>Team Profile Generator</title>
     </head>
     <body>
-${generateTeam(team)}
+
     </body>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

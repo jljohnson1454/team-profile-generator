@@ -54,7 +54,7 @@ const promptManager = () => {
         },
         {
             type: 'input',
-            name: 'office',
+            name: 'officeNumber',
             message: "Please enter office id",
             validate: officeInput => {
                 if(officeInput) {
@@ -65,11 +65,14 @@ const promptManager = () => {
                 }}
         },
     ]).then(managerData => {
+        
         let manager = new Manager(
         managerData.name,
         managerData.id,
         managerData.email,
-        managerData.role)
+        managerData.officeNumber,
+        managerData.role,
+        )
         
         teamArray.push(manager)
         
@@ -228,7 +231,9 @@ const promptIntern = () => {
         internData.name,
         internData.id,
         internData.email,
-        internData.school)
+        internData.school,
+        internData.role,
+        )
 
         teamArray.push(intern);
 
@@ -241,7 +246,8 @@ const promptIntern = () => {
 function writeToFile() {
     var htmlPath = path.join(__dirname, '/dist', 'index.html');
 
-    fs.writeFileSync(htmlPath, htmlHelper(teamArray), 'utf-8')
+    fs.writeFileSync(htmlPath, htmlHelper(teamArray), 'utf-8');
+    console.log(teamArray)
 
 }
 
