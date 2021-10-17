@@ -13,7 +13,7 @@ const htmlManager = (manager) => {
   <div class="card-body">
     <h5 class="card-title">${manager.name}</h5>
     <p class="card-text">ID: ${manager.id}</p>
-    <p class="card-text">Email: ${manager.email}</p>
+    <p class="card-text">Email: <a href="mailto:${manager.email}">${manager.email}</p>
     <p class="card-text">Office Number: ${manager.officeNumber}</p>
   </div>
   </div>`
@@ -25,8 +25,8 @@ const htmlEngineer = (engineer) => {
   <div class="card-body">
     <h5 class="card-title">${engineer.name}</h5>
     <p class="card-text">ID: ${engineer.id}</p>
-    <p class="card-text">Email: ${engineer.email}</p>
-    <p class="card-text">Git: ${engineer.git}</p>
+    <p class="card-text">Email: <a href="mailto:${engineer.email}">${engineer.email}</p>
+    <p class="card-text">Git: <a href="https://github.com/${engineer.github}">${engineer.github}</a>${engineer.git}</p>
   </div>
   </div>`
 }
@@ -37,7 +37,7 @@ const htmlIntern = (intern) => {
   <div class="card-body">
     <h5 class="card-title">${intern.name}</h5>
     <p class="card-text">ID: ${intern.id}</p>
-    <p class="card-text">Email: ${intern.email}</p>
+    <p class="card-text">Email: <a href="mailto:${intern.email}">${intern.email}</p>
     <p class="card-text">School: ${intern.school}</p>
   </div>
   </div>`
