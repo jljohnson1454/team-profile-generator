@@ -6,16 +6,30 @@ This project was created using Node.js in tandem with Object Oriented Programmin
 ## Installation
 Before proceeding, make sure that Node.js is installed on your machine (https://nodejs.org/en/download/). Once Node is installed, also install it in the file directory by typing 'node install' in the command console. Next, install Jest(https://jestjs.io/docs/getting-started) on the same command line by typing 'npm install jest --save-dev'.
 
+## Links
+Github Repository: https://github.com/jljohnson1454/team-profile-generator
+
 ## Usage
+Gif Walkthrough:
+</br>
 ![Walkthrough Gif](/assets/images/walkthrough.gif)
 </br>
+Youtube Walkthrough:
+</br>
+[![video walkthrough](https://img.youtube.com/vi/Vk3tNOmCwm8/0.jpg)](https://youtu.be/Vk3tNOmCwm8)
+</br>
+</br>
+Passing Tests:
+</br>
 ![testing image](/assets/images/passingtests.jpg)
--Video walkthrough : https://youtu.be/Vk3tNOmCwm8
+</br>
 
 ## Contributors
-Jacob Johnson
-Received help from TA Cynthia Garcia and tutor Christopher Lee
-Used the previous ReadMe file generator for reference
+-Jacob Johnson
+</br>
+-Received help from TA Cynthia Garcia and tutor Christopher Lee
+</br>
+-Used the previous ReadMe file generator for reference
 
 ## License
 -MIT
