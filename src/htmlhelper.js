@@ -1,10 +1,10 @@
 // Multiple functions for exporting
 
-const generateTeam = (team) => {
-    console.log(team)
-    return`
-    <div class="col-4 mt-4">Blah ${team[0].name}Blah Blah</div>`;
-};
+// const generateTeam = (team) => {
+//     console.log(team)
+//     return`
+//     <div class="col-4 mt-4">Blah ${team[0].name}Blah Blah</div>`;
+// };
 
 const htmlManager = (manager) => {
     return `<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
@@ -19,57 +19,66 @@ const htmlManager = (manager) => {
   </div>`
 }
 
-const htmlEngineer = (employeeType) => {
+const htmlEngineer = (engineer) => {
     return `<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-  <div class="card-header">${employeeType.role}  <i class="fas fa-users-cog"></i></div>
+  <div class="card-header">${engineer.role}  <i class="fas fa-users-cog"></i></div>
   <div class="card-body">
-    <h5 class="card-title">${employeeType.name}</h5>
-    <p class="card-text">ID: ${employeeType.id}</p>
-    <p class="card-text">Email: ${employeeType.email}</p>
-    <p class="card-text">Git: ${employeeType.git}</p>
+    <h5 class="card-title">${engineer.name}</h5>
+    <p class="card-text">ID: ${engineer.id}</p>
+    <p class="card-text">Email: ${engineer.email}</p>
+    <p class="card-text">Git: ${engineer.git}</p>
   </div>
   </div>`
 }
 
-const htmlIntern = (employeeType) => {
+const htmlIntern = (intern) => {
     return `<div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
-  <div class="card-header">${employeeType.role}  <i class="fas fa-user-graduate"></i></div>
+  <div class="card-header">${intern.role}  <i class="fas fa-user-graduate"></i></div>
   <div class="card-body">
-    <h5 class="card-title">${employeeType.name}</h5>
-    <p class="card-text">ID: ${employeeType.id}</p>
-    <p class="card-text">Email: ${employeeType.email}</p>
-    <p class="card-text">School: ${employeeType.school}</p>
+    <h5 class="card-title">${intern.name}</h5>
+    <p class="card-text">ID: ${intern.id}</p>
+    <p class="card-text">Email: ${intern.email}</p>
+    <p class="card-text">School: ${intern.school}</p>
   </div>
   </div>`
 }
 
 
+module.exports = (team) => {
 
-module.exports = team => {
-    
-    for(let i = 0; i < team.length; i++) {
-        const employeeType = team[i];
-        (console.log(employeeType))
-        const Erole = employeeType.role;
-        console.log(Erole)
+    teamArray = [];
 
-        if(Erole === 'Manager') {
-            htmlManager(employeeType);
-            console.log(Erole);
+
+    for (let i = 0; i < team.length; i++) {
+        const employee = team[i];
+        (console.log(employee))
+        const role = employee.role;
+        console.log(role)
+
+        if (role === 'Manager') {
+            const managerCard = htmlManager(employee);
+            console.log(role);
+
+            teamArray.push(managerCard);
         }
-        if(Erole === 'Engineer') {
-            htmlEngineer(employeeType);
-            console.log(employeeType);
-        }
-        
-        if(Erole === 'Intern') {
-            htmlIntern(employeeType);
-            
+        if (role === 'Engineer') {
+            const engineerCard = htmlEngineer(employee);
+            console.log(employee);
+
+            teamArray.push(engineerCard);
         }
 
+        if (role === 'Intern') {
+            const internCard = htmlIntern(employee);
 
-    
-    
+            teamArray.push(internCard);
+
+        }
+    }
+
+    const employeeCards = teamArray.join('')
+
+
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -83,16 +92,15 @@ module.exports = team => {
         <title>Team Profile Generator</title>
     </head>
     <header>
-    <div class="jumbotron jumbotron-fluid">
-    <h1 class="display-4 text-center bg-danger">Team Profile Generator</h1>
-    </div>
+        <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4 text-center bg-danger">Team Profile Generator</h1>
+        </div>
     </header>
 
     <body>
     <container>
     <div class="row justify-content-center">
-    
-
+    ${employeeCards}
     </div>
     </container>
     
@@ -101,8 +109,6 @@ module.exports = team => {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/261fe7c387.js" crossorigin="anonymous"></script>
     </html>`
-
-    }
-};
+}
 
 
