@@ -7,20 +7,20 @@
 // };
 
 const htmlManager = (manager) => {
-    return `<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    return `<div class="card text-white bg-primary mb-3 m-3" style="max-width: 18rem;">
   <div class="card-header">${manager.role}  <i class="fas fa-user-tie"></i></div>
   
   <div class="card-body">
     <h5 class="card-title">${manager.name}</h5>
     <p class="card-text">ID: ${manager.id}</p>
-    <p class="card-text">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+    <p class="card-text">Email: <a class="text-white" href="mailto:${manager.email}">${manager.email}</a></p>
     <p class="card-text">Office Number: ${manager.officeNumber}</p>
   </div>
   </div>`
 }
 
 const htmlEngineer = (engineer) => {
-    return `<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    return `<div class="card text-white bg-info mb-3 m-3" style="max-width: 18rem;">
   <div class="card-header">${engineer.role}  <i class="fas fa-users-cog"></i></div>
   <div class="card-body">
     <h5 class="card-title">${engineer.name}</h5>
@@ -32,7 +32,7 @@ const htmlEngineer = (engineer) => {
 }
 
 const htmlIntern = (intern) => {
-    return `<div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+    return `<div class="card text-white bg-warning mb-3 m-3" style="max-width: 18rem;">
   <div class="card-header">${intern.role}  <i class="fas fa-user-graduate"></i></div>
   <div class="card-body">
     <h5 class="card-title">${intern.name}</h5>
